@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand">  {{--href="{{ url('/') }}">--}}
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <img src={{URL::asset('/images/logo.svg')}} alt="logo" height="35">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
