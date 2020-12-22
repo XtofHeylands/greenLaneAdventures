@@ -42,14 +42,14 @@
 
               <div class="col-4">
                   <div class="profilepic">
-                    <img src="{{$user->foto}}"/>
+{{--                    <img src="{{$user->foto}}"/>--}}
                   </div>
               </div>
 
               <div class="col-8">
                   <div class="userinfo">
 
-                    <h2> {{$user->name}}</h2>
+{{--                    <h2> {{$user->name}}</h2>--}}
                     <h3> About </h3>
 {{--                    <p> {{$user->bio}}  </p>--}}
                   </div>
