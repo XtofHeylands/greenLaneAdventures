@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand">  {{--href="{{ url('/') }}">--}}
                     <img src={{URL::asset('/images/logo.svg')}} alt="logo" height="35">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -35,6 +35,17 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                    </ul>
+
+                    <!-- Middle Of Navbar -->
+                    <ul class="navbar-nav justify-content-center">
+                        @guest
+                            <!-- nothing should appear here -->
+                        @else
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="search tracks" aria-label="Search">
+                            </form>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
