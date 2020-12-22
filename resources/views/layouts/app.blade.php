@@ -24,7 +24,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand">  {{--href="{{ url('/') }}">--}}
+                <a class="navbar-brand"
+                    @guest
+                        href="{{ url('/') }}"
+                    @else
+                        href="{{ url('/home') }}"
+                    @endguest >
                     <img src={{URL::asset('/images/logo.svg')}} alt="logo" height="35">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -40,7 +45,7 @@
                     <!-- Middle Of Navbar -->
                     <ul class="navbar-nav justify-content-center">
                         @guest
-                            <!-- nothing should appear here -->
+                            <!-- search function is not available for guests at the moment -->
                         @else
                             <form class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="search tracks" aria-label="Search">
@@ -70,6 +75,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                        {{ __('Profile') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -80,11 +90,7 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item" href="{{ route('profile') }}"
-                                       onclick="event.preventDefault();
-                                        {{ __('Profile') }}
-                                    </a>
-                                </div>
+
                             </li>
                         @endguest
                     </ul>
