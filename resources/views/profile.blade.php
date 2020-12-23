@@ -49,7 +49,7 @@
               <div class="col-8">
                   <div class="userinfo">
 
-{{--                    <h2> {{$user->name}}</h2>--}}
+                    <h2> {{ Auth::user()->name }} </h2>
                     <h3> About </h3>
 {{--                    <p> {{$user->bio}}  </p>--}}
                   </div>

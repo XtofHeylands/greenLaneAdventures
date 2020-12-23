@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
+<style>
+        .card-header{
+        color: #4e6046;
+</style>
 @section('content')
 <div class="container pt-5">
     <div class="row justify-content-center">
         <div class="col-sm">
             <div class="card">
                 <div class="card-header">{{ __('Profile') }}</div>
-
                 <div class="card-body">
-
+                    <h6> {{ Auth::user()->name }} </h6>
                 </div>
             </div>
         </div>
