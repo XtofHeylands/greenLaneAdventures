@@ -48,11 +48,18 @@
 
               <div class="col-8">
                   <div class="userinfo">
-
+                    <div class="settings">
+                        <div class="float-right">
+                            <button type="button" class="btn btn-light">Settings 
+                        </button>
+                        </div>                                           
+                    </div>
                     <h2> {{ Auth::user()->name }} </h2>
                     <h3> About </h3>
+                  </div>
 {{--                    <p> {{$user->bio}}  </p>--}}
                   </div>
+
               </div>
           </div>
 
