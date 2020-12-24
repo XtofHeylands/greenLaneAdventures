@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TrackController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_101520_create_tracks_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/track/detail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/track/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/track/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/track/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Track.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Track.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/track/comments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/track/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/track/data.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/track/images.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/track/list.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +166,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../laptopshop" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -181,6 +198,7 @@
       <workItem from="1608386427004" duration="150000" />
       <workItem from="1608386586445" duration="10002000" />
       <workItem from="1608540450483" duration="18406000" />
+      <workItem from="1608803812770" duration="8383000" />
     </task>
     <servers />
   </component>

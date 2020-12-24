@@ -101,6 +101,53 @@
         <main>
             @yield('content')
         </main>
+
+        <footer id="footer" class="footer bg-light text-center text-lg-start">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">greenlaneAdventures</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                            voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">more info</h5>
+                        <p>insert</p>
+                        <p>insert</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-dark">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-dark">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-dark">Terms & Conditions </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-dark">Privacy policy</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Copyright:
+                <a class="text-dark" href="#!">greenLaneAdventures.com</a>
+            </div>
+
+        </footer>
     </div>
 </body>
 </html>

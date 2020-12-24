@@ -2,8 +2,9 @@
 
 <style>
         .card-header{
-        color: #4e6046;
+        color: #4e6046;}
 </style>
+
 @section('content')
 <div class="container pt-5">
     <div class="row justify-content-center">
@@ -43,7 +44,7 @@
                             </ul>
                         </div>
                         <div class="card-body">
-                            @yield('home')
+{{--                            @yield('home')--}}
                         </div>
                     </div>
                 </div>
