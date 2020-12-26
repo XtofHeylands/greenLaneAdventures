@@ -28,27 +28,38 @@
                     @endif
                         <iframe width="600" height="450" frameborder="0" style="border:0"
                                 src="https://www.google.com/maps/embed/v1/view?zoom=7&center=50.5039%2C4.4699&key=..." allowfullscreen></iframe>
+                </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active">Data</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link">Pictures</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link">Comments</a>
-                                </li>
-                            </ul>
+            <div class="card mt-2">
+                <div class="card-header">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-details-tab" data-toggle="pill" href="#pills-details" role="tab" aria-controls="pills-details" aria-selected="true">Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-pictures-tab" data-toggle="pill" href="#pills-pictures" role="tab" aria-controls="pills-pictures" aria-selected="false">Pictures</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-comments-tab" data-toggle="pill" href="#pills-comments" role="tab" aria-controls="pills-comments" aria-selected="false">Comments</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body" >
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </div>
-                        <div class="card-body">
-{{--                            @yield('home')--}}
+                        <div class="tab-pane fade" id="pills-pictures" role="tabpanel" aria-labelledby="pills-pictures-tab">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </div>
+                        <div class="tab-pane fade" id="pills-comments" role="tabpanel" aria-labelledby="pills-comments-tab">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="col-sm">
             <div class="card">

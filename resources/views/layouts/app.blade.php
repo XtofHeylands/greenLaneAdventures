@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'greenLaneAdventures') }}</title>
+    <title>greenlaneAdventures</title>
+    <link rel="icon" href="{{asset('/images/logo.svg')}}" style="fill: white"/>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
