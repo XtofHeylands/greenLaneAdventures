@@ -40,6 +40,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                    @guest
+                        <!-- browse function is not available for guests at the moment -->
+                        <!-- TODO create limited visibility of tracks for non-registered users -->
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('browse') }}">{{ __('browse') }}</a>
+                        </li>
+                    @endguest
 
                     </ul>
 
