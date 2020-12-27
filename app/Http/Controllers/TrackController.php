@@ -43,6 +43,7 @@ class TrackController extends Controller
         //handle image
         $validatedData = $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048']);
         $path = $request->file('image')->store('public/images');
+//        TODO image not stored in local folder so can't be displayed
 
         $track = new Track();
         $track->image = $path;

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/track/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/track/create.blade.php" afterDir="false" />
     </list>
@@ -150,6 +149,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -187,7 +187,7 @@
       <workItem from="1608540450483" duration="18406000" />
       <workItem from="1608803812770" duration="9163000" />
       <workItem from="1608977030478" duration="13272000" />
-      <workItem from="1609072774363" duration="23120000" />
+      <workItem from="1609072774363" duration="23662000" />
     </task>
     <servers />
   </component>

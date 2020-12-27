@@ -49,15 +49,17 @@
                         </div>
                     </div>
 
+{{--                    TODO make difficulty selectable--}}
+
                     <div class="form-group">
                         <label for="gpx">Choose gpx file</label>
-                        <input type="file" name="gpx" class="form-control" onchange="previewImage(this)">
+                        <input type="file" name="gpx" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="image">Choose image file</label>
                         <input type="file" name="image" class="form-control" id="image">
-                        <img id="previewImage" alt="Track image" style="max-width: 100%; margin-top: 20px"/>
+                        <img id="previewImage" style="max-width: 100%; margin-top: 20px"/>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -89,16 +91,5 @@
 
 </script>
 
-<script>
-
-
-
-
-
-
-</script>
-
 @endsection
 
-
-{{--TODO create form layout ot ad a track--}}
