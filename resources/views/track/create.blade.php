@@ -60,9 +60,13 @@
                         <img id="previewImage" alt="Track image" style="max-width: 100%; margin-top: 20px"/>
                     </div>
 
-
-
                     <button type="submit" class="btn btn-primary">Submit</button>
+
+                    @if(Illuminate\Support\Facades\Session::has('success'))
+                        <div class="alert alert-success mt-2" role="alert">
+                            Track successfully uploaded! View it <a href="#" class="alert-link">here</a>.
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>
@@ -82,6 +86,15 @@
             reader.readAsDataURL(this.files[0]);
         });
     });
+
+</script>
+
+<script>
+
+
+
+
+
 
 </script>
 

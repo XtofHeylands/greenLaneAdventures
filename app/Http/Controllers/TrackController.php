@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Track;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TrackController extends Controller
 {
@@ -34,7 +36,7 @@ class TrackController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -61,7 +63,7 @@ class TrackController extends Controller
 
         $track->save();
 
-        return redirect('add-track')->with('status', 'Image successfully uploaded.');
+        return redirect::to("/add-track")->with('success', 'Track successfully added');
     }
 
     /**
