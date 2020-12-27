@@ -14,12 +14,12 @@ class CreateTracksTable extends Migration
     public function up()
     {
         Schema::create('tracks', function (Blueprint $table) {
-            $table->increments('id');   //id of the track itself
+            $table->increments('id');    //id of the track itself
             $table->integer('user_id');  //id of user that uploaded the track
             $table->string('title');
             $table->text('description');
             $table->enum('difficulty', ['easy', "medium", "hard"]);
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->timestamps();
 //          TODO -- several parameters as length, approx duration, location will be extracted from the gpx file using google maps api
         });

@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrackController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Track.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Track.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_24_101520_create_tracks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_101520_create_tracks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/track/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/track/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/track/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/track/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -188,7 +194,8 @@
       <workItem from="1608386586445" duration="10002000" />
       <workItem from="1608540450483" duration="18406000" />
       <workItem from="1608803812770" duration="9163000" />
-      <workItem from="1608977030478" duration="12619000" />
+      <workItem from="1608977030478" duration="13272000" />
+      <workItem from="1609072774363" duration="21645000" />
     </task>
     <servers />
   </component>

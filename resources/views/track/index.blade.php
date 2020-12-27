@@ -5,16 +5,16 @@
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
                 <div class="btn-group btn-group">
-                    <button type="button" class="btn btn-primary">Add track</button>
-                    <button type="button" class="btn btn-secondary">Manage tracks</button>
+                    <a href="{{ url('/add-track') }}" class="btn btn-primary" role="button">Add track</a>
+                    <a href="{{ url('/') }}" class="btn btn-secondary" role="button">Manage tracks</a>
                 </div>
             </div>
 
             <div class="col-auto">
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
                     <div class="dropdown-menu">
-
+{{--                        TODO insert ways of sorting tracks--}}
                     </div>
                 </div>
             </div>
