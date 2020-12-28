@@ -110,8 +110,7 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        $track = Track::all()->find($id);
-        return view('track.edit')->with('track', $track);
+        return view('track.edit');
     }
 
     /**
@@ -137,5 +136,31 @@ class TrackController extends Controller
     {
         Track::all()->find($id)->delete();
         return view('profile.index');
+    }
+
+
+
+    function sortByNewest($tracks)
+    {
+        function date_compare_newest($element1, $element2) {
+            $datetime1 = strtotime($element1['created_at']);
+            $datetime2 = strtotime($element2['created_at']);
+            return $datetime1 - $datetime2;
+        }
+
+        usort($tracks, 'date_compare_newest');
+        return $tracks;
+    }
+
+    function sortByOldest($tracks)
+    {
+        function date_compare_oldest($element1, $element2) {
+            $datetime1 = strtotime($element1['created_at']);
+            $datetime2 = strtotime($element2['created_at']);
+            return $datetime2 - $datetime1;
+        }
+
+        usort($tracks, 'date_compare_oldest');
+        return $tracks;
     }
 }
