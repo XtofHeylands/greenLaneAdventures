@@ -1,27 +1,5 @@
 @extends('layouts.app')
 
-<head>
-    <title>map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCq3yUOgtN4pO_xbVWH0Dmh22lYQObaPc&callback=initMap&libraries=&v=weekly"
-        defer
-    ></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./index.js"></script>
-    <script src={{asset("public/js/googleMaps.js")}} ></script>
-    <script>
-        let map;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            });
-        }
-    </script>
-</head>
-
 <style>
         .card-header{
         color: #4e6046;}
@@ -48,7 +26,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <div style="height: 500px; width: 700px;" id="map"></div>
+                        <iframe width="600" height="450" frameborder="0" style="border:0"
+                                src="https://www.google.com/maps/embed/v1/view?zoom=7&center=50.5039%2C4.4699&key=..." allowfullscreen></iframe>
                 </div>
             </div>
 
