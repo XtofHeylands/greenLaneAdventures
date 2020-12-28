@@ -6,6 +6,7 @@ use App\Models\Track;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class TrackController extends Controller
 {
@@ -40,20 +41,43 @@ class TrackController extends Controller
      */
     public function store(Request $request)
     {
-        //handle image
-        $validatedData = $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048']);
-        $path = $request->file('image')->store('public/images');
-//        TODO image not stored in local folder so can't be displayed
-
         $track = new Track();
-        $track->image = $path;
+
+        //handle image
+        $request->validate(['image' => 'required|image']);
+        $im_path = $request->file('image')->store('public/images');
+        $track->image = $im_path;
+
+        //handle gpx file
+        $gpx_path = $request->file('gpx')->store('public/gpx');
+        $track->gpx = $gpx_path;
 
         //handle current user
         $user = auth()->id();
         $track->user_id = $user;
 
         //handle selected difficulty
-        $difficulty = $request->dificulty;
+        $easy_state = 'unchecked';
+        $medium_state = 'unchecked';
+        $hard_state = 'unchecked';
+
+        $difficulty = null;
+
+        if (isset($_POST['submitted'])){
+
+                $selected = $_POST['difficulty'];
+
+                if ($selected == 'easy'){
+                    $easy_state = 'checked';
+                } else if ($selected == 'medium'){
+                    $medium_state = 'checked';
+                } else if ($selected == 'hard'){
+                    $hard_state = 'checked';
+                }
+
+                $difficulty = $selected;
+        }
+        $track->difficulty = $_POST['difficulty'];
 
         //ohter track parameters
         $title = $request->title;
@@ -75,7 +99,7 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('track.show');
     }
 
     /**
@@ -86,7 +110,7 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('track.edit');
     }
 
     /**
@@ -98,7 +122,7 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //TODO logic to edit track details
     }
 
     /**
@@ -109,13 +133,32 @@ class TrackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //TODO logic to remove track
     }
 
 
 
+    function sortByNewest($tracks)
+    {
+        function date_compare_newest($element1, $element2) {
+            $datetime1 = strtotime($element1['created_at']);
+            $datetime2 = strtotime($element2['created_at']);
+            return $datetime1 - $datetime2;
+        }
 
+        usort($tracks, 'date_compare_newest');
+        return $tracks;
+    }
 
+    function sortByOldest($tracks)
+    {
+        function date_compare_oldest($element1, $element2) {
+            $datetime1 = strtotime($element1['created_at']);
+            $datetime2 = strtotime($element2['created_at']);
+            return $datetime2 - $datetime1;
+        }
 
-
+        usort($tracks, 'date_compare_oldest');
+        return $tracks;
+    }
 }

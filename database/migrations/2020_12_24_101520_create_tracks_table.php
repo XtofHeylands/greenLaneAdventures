@@ -20,6 +20,7 @@ class CreateTracksTable extends Migration
             $table->text('description');
             $table->enum('difficulty', ['easy', "medium", "hard"]);
             $table->text('image')->nullable();
+            $table->text('gpx');
             $table->timestamps();
 //          TODO -- several parameters as length, approx duration, location will be extracted from the gpx file using google maps api
         });

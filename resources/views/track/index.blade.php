@@ -6,7 +6,7 @@
             <div class="col-auto mr-auto">
                 <div class="btn-group btn-group">
                     <a href="{{ url('/add-track') }}" class="btn btn-primary" role="button">Add track</a>
-                    <a href="{{ url('/') }}" class="btn btn-secondary" role="button">Manage tracks</a>
+                    <a href="{{ url('/manage-tracks') }}" class="btn btn-secondary" role="button">Manage tracks</a>
                 </div>
             </div>
 
@@ -14,6 +14,8 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">newest first</a>
+                        <a class="dropdown-item" href="#">oldest first</a>
 {{--                        TODO insert ways of sorting tracks--}}
                     </div>
                 </div>
@@ -24,12 +26,12 @@
 @foreach ($tracks as $track)
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="card mb-3" style="max-width: 100%;">
+            <div class="card mb-3 p-0" style="max-width: 100%;">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{ $track->image }}" class="card-img" alt="Image missing">
+                    <div class="col-4">
+                        <img src="/storage/images{{str_replace('public/images', '', $track->image)}}" class="card-img no-gutters" alt="Image missing">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-8">
                         <div class="card-body">
                             <h5 class="card-title">{{$track->title}}</h5>
                             @if($track->difficulty == 'easy')

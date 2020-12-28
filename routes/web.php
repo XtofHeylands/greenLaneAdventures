@@ -23,9 +23,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/browse', [TrackController::class, 'index'])->name('browse');
+
 Route::get('/add-track', [TrackController::class, 'create'])->name('create');
+Route::get('/manage-tracks', [TrackController::class, 'show'])->name('show');
+Route::post('/add-track', [TrackController::class, 'store'])->name('track.store');
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-Route::post('/add-track', [TrackController::class, 'store'])->name('track.store');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
