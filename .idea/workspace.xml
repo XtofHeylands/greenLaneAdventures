@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/googleMaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/maps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/greenLaneAdventures.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_24_101520_create_tracks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_101520_create_tracks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/difficultyToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/difficultyToggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/googleMaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +163,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -162,7 +171,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -170,11 +179,11 @@
       <recent name="C:\xampp\htdocs\greenLaneAdventures\app\Http\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\greenlaneAdventures\resources\js" />
       <recent name="C:\xampp\htdocs\greenLaneAdventures\resources\views\track" />
       <recent name="C:\xampp\htdocs\greenLaneAdventures\resources\views" />
       <recent name="C:\xampp\htdocs\greenLaneAdventures\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\greenLaneAdventures\public\images" />
-      <recent name="C:\xampp\htdocs\greenLaneAdventures\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -197,7 +206,7 @@
       <workItem from="1608803812770" duration="9163000" />
       <workItem from="1608977030478" duration="13272000" />
       <workItem from="1609072774363" duration="23662000" />
-      <workItem from="1609147129209" duration="13654000" />
+      <workItem from="1609147129209" duration="17533000" />
     </task>
     <servers />
   </component>

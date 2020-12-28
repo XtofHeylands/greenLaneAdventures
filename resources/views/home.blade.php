@@ -1,30 +1,19 @@
 @extends('layouts.app')
 
 <head>
-    <title>map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCq3yUOgtN4pO_xbVWH0Dmh22lYQObaPc&callback=initMap&libraries=&v=weekly"
-        defer
-    ></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./index.js"></script>
-    <script src={{asset("public/js/googleMaps.js")}} ></script>
-    <script>
-        let map;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            });
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <title>map test</title>
 </head>
 
 <style>
         .card-header{
         color: #4e6046;}
+
+        #osm_map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
 </style>
 
 @section('content')
@@ -48,7 +37,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <div style="height: 500px; width: 700px;" id="map"></div>
+
+                    <div id="app">
+                        <div id="osm_map"></div>
+                    </div>
+
                 </div>
             </div>
 
@@ -93,4 +86,8 @@
         </div>
     </div>
 </div>
+
+<script src='resources/js/maps.js' type="text/javascript">
+    window.my_map.display();
+</script>
 @endsection
