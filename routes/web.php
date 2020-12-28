@@ -23,14 +23,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/browse', [TrackController::class, 'index'])->name('browse');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+Route::get('/add-track', [TrackController::class, 'create'])->name('track.create');
+Route::post('/add-track', [TrackController::class, 'store'])->name('track.store');
 Route::get('/delete-track/{id}', [TrackController::class, 'destroy'])->name('track.destroy');
 
-Route::get('/browse', [TrackController::class, 'index'])->name('browse');
-Route::get('/add-track', [TrackController::class, 'create'])->name('create');
-Route::post('/add-track', [TrackController::class, 'store'])->name('track.store');
+Route::get('/edit-track/{id}', [TrackController::class, 'edit'])->name('track.edit');
+Route::post('/edit-track/{id}', [TrackController::class, 'update'])->name('track.update');
+//TODO fix edit track gebeuren
+
+
 
 Auth::routes();

@@ -11,7 +11,7 @@
         <div class="card p-0" style="max-width: 70%">
             <div class="card-header">{{ __('New track') }}</div>
             <div class="card-body">
-                <form method="post" action="{{route('track.store')}}" enctype="multipart/form-data">
+                <form method="post" action="{{route('track.update')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
