@@ -26,8 +26,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <iframe width="600" height="450" frameborder="0" style="border:0"
-                                src="https://www.google.com/maps/embed/v1/view?zoom=7&center=50.5039%2C4.4699&key=..." allowfullscreen></iframe>
+                        <iframe src="track/map.blade.php" width="700" height="500" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>
                 </div>
             </div>
 

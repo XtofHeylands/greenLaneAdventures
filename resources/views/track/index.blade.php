@@ -6,7 +6,6 @@
             <div class="col-auto mr-auto">
                 <div class="btn-group btn-group">
                     <a href="{{ url('/add-track') }}" class="btn btn-primary" role="button">Add track</a>
-                    <a href="{{ url('/manage-tracks') }}" class="btn btn-secondary" role="button">Manage tracks</a>
                 </div>
             </div>
 

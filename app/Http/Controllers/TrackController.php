@@ -128,12 +128,14 @@ class TrackController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        //TODO logic to remove track
+        Track::all()->find($id)->delete();
+        return view('profile.index');
     }
 
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
+use App\Models\Track;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -23,6 +25,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile');
+
+        $tracks = Track::all()->where('user_id', auth()->id());
+        $user = auth()->user();
+
+        return view('profile.index')->with('tracks', $tracks)
+                                            ->with('user', $user);
     }
 }
