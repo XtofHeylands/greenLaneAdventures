@@ -26,7 +26,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <iframe src="track/map.blade.php" width="700" height="500" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>
+                        <div id="map" style="height: 500px; width: 700px;"></div>
                 </div>
             </div>
 
@@ -71,4 +71,26 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    navigator.geolocation.getCurrentPosition(function(location) {
+        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
+        var mymap = L.map('map').setView(latlng, 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoieHRvZmgiLCJhIjoiY2tqYTV6b2ZjMWUxNDM0bXRqazJwY2pvMSJ9.ZfY4I769QSutybzGRT6lCQ'
+        }).addTo(mymap);
+
+        var marker = L.marker(latlng).addTo(mymap);
+
+        marker.bindPopup("<b>Your current location.</b>").openPopup();
+    });
+</script>
+
 @endsection

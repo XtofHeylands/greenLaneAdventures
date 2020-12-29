@@ -192,11 +192,10 @@ class TrackController extends Controller
         return redirect('/profile');
     }
 
-
     /**
      *
      *  Search for a specific track based on name.
-     *
+     *  TODO --- implement location based search function
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
