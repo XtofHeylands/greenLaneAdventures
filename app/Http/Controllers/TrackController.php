@@ -193,28 +193,22 @@ class TrackController extends Controller
     }
 
 
+    /**
+     *
+     *  Search for a specific track based on name.
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function search(Request $request){
 
-    function sortByNewest($tracks)
-    {
-        function date_compare_newest($element1, $element2) {
-            $datetime1 = strtotime($element1['created_at']);
-            $datetime2 = strtotime($element2['created_at']);
-            return $datetime1 - $datetime2;
-        }
+        $search = $request->input('search');
 
-        usort($tracks, 'date_compare_newest');
-        return $tracks;
-    }
-
-    function sortByOldest($tracks)
-    {
-        function date_compare_oldest($element1, $element2) {
-            $datetime1 = strtotime($element1['created_at']);
-            $datetime2 = strtotime($element2['created_at']);
-            return $datetime2 - $datetime1;
-        }
-
-        usort($tracks, 'date_compare_oldest');
-        return $tracks;
+        $tracks = Track::query()
+            ->where('title','LIKE', "%{$search}%")
+            ->get();
+        //->orwhere('location', 'LIKE', "%{$search}%");
+        //...
+        return view('track.index')->with('tracks', $tracks);
     }
 }

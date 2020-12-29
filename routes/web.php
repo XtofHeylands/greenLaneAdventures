@@ -25,13 +25,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-//Route::get('/delete-track/{id}', [TrackController::class, 'destroy'])->name('track.destroy');
-//
-//Route::get('/edit-track/{id}', [TrackController::class, 'edit'])->name('track.edit');
-//
-//Route::get('/browse', [TrackController::class, 'index'])->name('browse');
-//Route::get('/add-track', [TrackController::class, 'create'])->name('create');
-//Route::post('/add-track', [TrackController::class, 'store'])->name('track.store');
+
+Route::get('/search/tracks', [TrackController::class, 'search'])->name('search');
 
 Route::resource('tracks', TrackController::class);
 //GET 	        /tracks 	            index 	    tracks.index

@@ -58,8 +58,8 @@
                         @guest
                             <!-- search function is not available for guests at the moment -->
                         @else
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="search tracks" aria-label="Search">
+                            <form action="{{route('search')}}"  method="get" class="form-inline my-2 my-lg-0">
+                                <input name="search" class="form-control mr-sm-2" type="text" placeholder="search tracks" aria-label="Search" required>
                             </form>
                         @endguest
                     </ul>

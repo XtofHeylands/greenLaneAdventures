@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="card p-0" style="max-width: 70%">
-            <div class="card-header">{{ __('New track') }}</div>
+            <div class="card-header">{{ __('Edit existing track') }}</div>
             <div class="card-body">
                 <form method="post" action={{URL('/tracks', ['track' => $track])}} enctype="multipart/form-data">
                     <input name="_method" type="hidden" value="Patch">
@@ -51,12 +51,12 @@
                     {{--                    TODO make difficulty selectable--}}
 
                     <div class="form-group">
-                        <label for="gpx">Choose gpx file</label>
+                        <label for="gpx">Choose gpx file <small class="text-muted">(Leave empty to keep unchanged)</small></label>
                         <input type="file" name="gpx" class="form-control" id="gpx">
                     </div>
 
                     <div class="form-group">
-                        <label for="image">Choose image file</label>
+                        <label for="image">Choose image file <small class="text-muted">(Leave empty to keep unchanged)</small></label>
                         <input type="file" name="image" class="form-control" id="image">
                         <img id="previewImage" style="max-width: 100%; margin-top: 20px"/>
                     </div>
