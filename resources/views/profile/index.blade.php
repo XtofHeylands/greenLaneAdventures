@@ -9,6 +9,7 @@
             <div class="card">
                 <div class="card-header">{{$user->name}}</div>
                 <div class="card-body">
+                    <a href="#" class="btn btn-secondary" role="button">Edit profile</a>
                 </div>
             </div>
         </div>
@@ -41,6 +42,14 @@
                             </div>
                         </div>
                     </div>
+
+                    @if(Illuminate\Support\Facades\Session::has('success'))
+                        <div class="alert alert-success mt-3" role="alert">
+                            Track successfully updated! View it <a href="#" class="alert-link">here</a>.
+                            {{--                            TODO create track show to view detail of created and other tracks--}}
+                        </div>
+                    @endif
+
                     @foreach ($tracks as $track)
                         <div class="container mt-3 pt-0">
                             <div class="row justify-content-center">
@@ -66,11 +75,9 @@
                                             </div>
                                         </div>
                                         <div class="col text-right pr-5" style="font-size: 5px;line-height: 115px;letter-spacing: 0.162em;font-weight: 100;font-style: normal;">
-
-
                                                 <form action="{{URL('/tracks', ['track' => $track])}}" method="post">
 
-                                                    <a href="tracks/{{$track->id}}" class="btn btn-secondary" role="button">Edit</a>
+                                                    <a href="tracks/{{$track->id}}/edit" class="btn btn-secondary" role="button">Edit</a>
                                                     <input class="btn btn-danger" type="submit" value="Delete">
 
                                                     @method('delete')
@@ -88,7 +95,5 @@
         </div>
     </div>
 </div>
-
-
 
 @endsection

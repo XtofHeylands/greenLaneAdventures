@@ -110,7 +110,8 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        return view('track.edit');
+        $track = Track::all()->find($id);
+        return view('track.edit')->with('track', $track);
     }
 
     /**
@@ -122,7 +123,52 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //TODO logic to edit track details
+        $track = Track::all()->find($id);
+
+        if ($request->hasFile('image')){
+            $request->validate(['image' => 'required|image']);
+            $im_path = $request->file('image')->store('public/images');
+            $track->image = $im_path;
+        }
+
+        if ($request->hasFile('gpx')){
+            $gpx_path = $request->file('gpx')->store('public/gpx');
+            $track->gpx = $gpx_path;
+        }
+
+        //handle selected difficulty
+        $easy_state = 'unchecked';
+        $medium_state = 'unchecked';
+        $hard_state = 'unchecked';
+
+        $difficulty = null;
+
+        if (isset($_POST['submitted'])){
+
+            $selected = $_POST['difficulty'];
+
+            if ($selected == 'easy'){
+                $easy_state = 'checked';
+            } else if ($selected == 'medium'){
+                $medium_state = 'checked';
+            } else if ($selected == 'hard'){
+                $hard_state = 'checked';
+            }
+
+            $difficulty = $selected;
+        }
+        $track->difficulty = $_POST['difficulty'];
+
+        //ohter track parameters
+        $title = $request->title;
+        $description = $request->description;
+
+        $track->title = $title;
+        $track->description = $description;
+
+        $track->update();
+
+        return redirect::to("/profile")->with('success', 'Track successfully added');
     }
 
     /**
