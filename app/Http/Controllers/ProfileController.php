@@ -25,7 +25,6 @@ class ProfileController extends Controller
      */
     public function index()
     {
-
         $tracks = Track::all()->where('user_id', auth()->id());
         $user = auth()->user();
 

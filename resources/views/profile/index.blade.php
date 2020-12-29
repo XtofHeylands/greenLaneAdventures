@@ -3,12 +3,6 @@
 
 
 @section('content')
-<script>
-    $user = {{auth()->user()}}
-</script>
-
-
-
 <div class="container pt-5">
     <div class="row justify-content-center">
         <div class="col-sm">
@@ -31,7 +25,7 @@
                         <div class="row justify-content-between">
                             <div class="col-auto mr-auto">
                                 <div class="btn-group btn-group">
-                                    <a href="{{ url('/add-track') }}" class="btn btn-primary" role="button">Add track</a>
+                                    <a href="{{ url('/tracks/create') }}" class="btn btn-primary" role="button">Add track</a>
                                 </div>
                             </div>
 
@@ -72,9 +66,16 @@
                                             </div>
                                         </div>
                                         <div class="col text-right pr-5" style="font-size: 5px;line-height: 115px;letter-spacing: 0.162em;font-weight: 100;font-style: normal;">
-                                            <div class="btn-group btn-group">
-                                                <a href="/edit-track/{{$track->id}}" class="btn btn-secondary" role="button">Edit</a>
-                                                <a href="/delete-track/{{$track->id}}" class="btn btn-danger" role="button">Delete</a>
+
+
+                                                <form action="{{URL('/tracks', ['track' => $track])}}" method="post">
+
+                                                    <a href="tracks/{{$track->id}}" class="btn btn-secondary" role="button">Edit</a>
+                                                    <input class="btn btn-danger" type="submit" value="Delete">
+
+                                                    @method('delete')
+                                                    @csrf
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

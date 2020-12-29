@@ -5,7 +5,7 @@
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
                 <div class="btn-group btn-group">
-                    <a href="{{ url('/add-track') }}" class="btn btn-primary" role="button">Add track</a>
+                    <a href="{{ url('/tracks/create') }}" class="btn btn-primary" role="button">Add track</a>
                 </div>
             </div>
 

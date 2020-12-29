@@ -47,7 +47,7 @@
                         <!-- TODO create limited visibility of tracks for non-registered users -->
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('browse') }}">{{ __('browse') }}</a>
+                            <a class="nav-link" href="{{ route('tracks.index') }}">{{ __('browse') }}</a>
                         </li>
                     @endguest
 

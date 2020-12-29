@@ -88,7 +88,7 @@ class TrackController extends Controller
 
         $track->save();
 
-        return redirect::to("/add-track")->with('success', 'Track successfully added');
+        return redirect::to("/tracks/create")->with('success', 'Track successfully added');
     }
 
     /**
@@ -134,8 +134,16 @@ class TrackController extends Controller
      */
     public function destroy($id)
     {
-        Track::all()->find($id)->delete();
-        return view('profile.index');
+        $track = Track::all()->find($id);
+
+        $image = $track->image;
+        $gpx = $track->gpx;
+
+        Storage::delete($image);
+        Storage::delete($gpx);
+
+        $track->delete();
+        return redirect('/profile');
     }
 
 
