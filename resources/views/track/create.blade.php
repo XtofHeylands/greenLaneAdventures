@@ -4,8 +4,6 @@
 
 @section('content')
 
-
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="card p-0" style="max-width: 70%">
@@ -51,8 +49,6 @@
                             </div>
                         </div>
                     </div>
-
-{{--                    TODO make difficulty selectable--}}
 
                     <div class="form-group">
                         <label for="gpx">Choose gpx file</label>

@@ -29,6 +29,8 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
 
+    <script src="{{ asset('js/map.js') }}"></script>
+
 
 </head>
 <body>
@@ -108,8 +110,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-
-
+                                </div>
                             </li>
                         @endguest
                     </ul>
