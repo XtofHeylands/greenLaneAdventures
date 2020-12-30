@@ -95,9 +95,6 @@ function drawTrack(track, map){
 
 // call to python REST service
 function gpxToJson(){
-    url = "http://127.0.0.1:5000/gpx/C:/xampp/htdocs/greenlaneAdventures/public/storage/gpx/WOeGt3Jd86nQgXrRpKfEx33ZeMO0Ksr16xbgadzr.xml" ;
-    fetch(url).then(function (response){
-        var track = JSON.parse(response.json());
-        return track;
-    });
+    url = "http://127.0.0.1:5000/convert?path=" + document.getElementById('id') ;
+    fetch(url).then(response => alert('test'));
 }

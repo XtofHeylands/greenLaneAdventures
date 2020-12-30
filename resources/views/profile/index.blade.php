@@ -18,7 +18,7 @@
                             <small class="text-muted">Member since: {{$user->created_at}}</small>
                         </div>
                         <div class="col text-right">
-                            <a href="#" class="btn btn-secondary" role="button">Edit profile</a>
+                            <a href="#" class="btn btn-secondary" onclick="gpxToJson()" role="button">Edit profile</a>
                         </div>
                     </div>
                 </div>
