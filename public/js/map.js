@@ -60,14 +60,6 @@ function removeTrack(){
 
 }
 
-// call to python REST service
-function gpxToJson(){
-    file = document.getElementById(file)
-    url = "http://127.0.0.1:5000/gpx/" + file;
-    fetch(url).then(response => json = response.json());
-    return JSON.parse(json);
-}
-
 //drawing of selected track onto the map
 function drawTrack(track, map){
 
@@ -99,4 +91,13 @@ function drawTrack(track, map){
 
     // zoom map to fit the polyline and markers
     map.fitBounds(polyline.getBounds());
+}
+
+// call to python REST service
+function gpxToJson(){
+    url = "http://127.0.0.1:5000/gpx/C:/xampp/htdocs/greenlaneAdventures/public/storage/gpx/WOeGt3Jd86nQgXrRpKfEx33ZeMO0Ksr16xbgadzr.xml" ;
+    fetch(url).then(function (response){
+        var track = JSON.parse(response.json());
+        return track;
+    });
 }

@@ -13,6 +13,8 @@
                 <div class="card-header">{{ __('Profile') }}</div>
                 <div class="card-body">
                     <h6> {{ Auth::user()->name }} </h6>
+                    <img src="{{ Auth::user()->profileImage }}" class="card-img" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
+                    <small class="text-muted">Member since: {{Auth::user()->created_at}}</small>
                 </div>
             </div>
         </div>

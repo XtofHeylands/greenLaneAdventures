@@ -21,11 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'auth', 'middleware' => 'cors'], function() {
-    Route::post('/login', 'AuthController@login');
-    Route::post('/register', 'AuthController@register');
-});
-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

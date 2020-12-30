@@ -53,8 +53,14 @@
         </div>
     @endforeach
 @else
-    <div>
-        <h2>No tracks found</h2>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="card mb-3 p-0" style="max-width: 100%;">
+                <div class="row no-gutters">
+                    <h2 class="text-center p-5">No tracks found!</h2>
+                </div>
+            </div>
+        </div>
     </div>
 @endif
 

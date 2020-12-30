@@ -9,7 +9,18 @@
             <div class="card">
                 <div class="card-header">{{$user->name}}</div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-secondary" role="button">Edit profile</a>
+                    <div class="row">
+                        <div class="col">
+                            <img src="{{$user->profileImage}}" class="card-img" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
+                        </div>
+                        <div class="col">
+                            <p>{{$user->bio}}</p>
+                            <small class="text-muted">Member since: {{$user->created_at}}</small>
+                        </div>
+                        <div class="col text-right">
+                            <a href="#" class="btn btn-secondary" role="button">Edit profile</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
