@@ -45,20 +45,6 @@ function initMapOverview(){
     });
 }
 
-// initialization of the map that shows a detailed view of a certain track
-function initMapDetail(){
-
-}
-
-// function called when track is added to ad beginpoint to the list
-function addTrack(){
-
-}
-
-// function called when track is removed to remove beginpoint from the list
-function removeTrack(){
-
-}
 
 //drawing of selected track onto the map
 function drawTrack(track, map){
@@ -93,8 +79,8 @@ function drawTrack(track, map){
     map.fitBounds(polyline.getBounds());
 }
 
-// call to python REST service
-function gpxToJson(){
-    url = "http://127.0.0.1:5000/convert?path=" + document.getElementById('id') ;
-    fetch(url).then(response => alert('test'));
-}
+// // call to python REST service
+// function gpxToJson(){
+//     url = "http://127.0.0.1:5000/convert?path=" + document.getElementById('id') ;
+//     fetch(url).then(response => alert('test'));
+// }

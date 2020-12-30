@@ -7,6 +7,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use phpGPX\phpGPX;
 
 class TrackController extends Controller
 {
@@ -82,6 +83,9 @@ class TrackController extends Controller
         //ohter track parameters
         $title = $request->title;
         $description = $request->description;
+
+        //begin point
+
 
         $track->title = $title;
         $track->description = $description;
