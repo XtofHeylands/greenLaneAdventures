@@ -84,8 +84,17 @@ class TrackController extends Controller
         $title = $request->title;
         $description = $request->description;
 
-        //begin point
+        //store starting point in database for quick access
+        $gpx = new phpGPX();
+        $file = $gpx->load(asset($gpx_path));
 
+        $lat = $file->tracks[0]->segments[0]->points[0]->latitude;
+        $lon = $file->tracks[0]->segments[0]->points[0]->longitude;
+
+        //TODO takes to long so find other solution
+
+        $track->lat = $lat;
+        $track->lon = $lon;
 
         $track->title = $title;
         $track->description = $description;
@@ -163,7 +172,17 @@ class TrackController extends Controller
         }
         $track->difficulty = $_POST['difficulty'];
 
-        //ohter track parameters
+        //store starting point in database for quick access
+        $gpx = new phpGPX();
+        $file = $gpx->load(asset($gpx_path));
+
+        $lat = $file->tracks[0]->segments[0]->points[0]->latitude;
+        $lon = $file->tracks[0]->segments[0]->points[0]->longitude;
+
+        $track->lat = $lat;
+        $track->lon = $lon;
+
+        //other track parameters
         $title = $request->title;
         $description = $request->description;
 
