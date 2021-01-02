@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @foreach ($tracks as $track)
-        @if($track->user_id == auth()->id())
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="card mb-3 p-0" style="max-width: 100%;">
@@ -25,11 +23,21 @@
                                 @endif
                                 <p class="card-text"><small class="text-muted">Created on {{$track->created_at}}</small></p>
                             </div>
+                            @if($track->user_id == Auth()->id())
+                                <div class="col text-right pr-5" style="font-size: 5px;line-height: 115px;letter-spacing: 0.162em;font-weight: 100;font-style: normal;">
+                                    <form action="{{URL('/tracks', ['track' => $track])}}" method="post">
+
+                                        <a href="tracks/{{$track->id}}/edit" class="btn btn-secondary" role="button">Edit</a>
+                                        <input class="btn btn-danger" type="submit" value="Delete">
+
+                                        @method('delete')
+                                        @csrf
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @endif
-    @endforeach
 @endsection

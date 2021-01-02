@@ -15,7 +15,9 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">newest first</a>
                         <a class="dropdown-item" href="#">oldest first</a>
+                        <a class="dropdown-item" href="#">Most popular first</a>
 {{--                        TODO insert ways of sorting tracks--}}
+{{--                        TODO implement way for users to indicate they have driven a certain track, based on this parameter sorting by popularity--}}
                     </div>
                 </div>
             </div>

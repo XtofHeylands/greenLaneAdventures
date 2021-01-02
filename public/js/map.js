@@ -84,3 +84,8 @@ function drawTrack(track, map){
 //     url = "http://127.0.0.1:5000/convert?path=" + document.getElementById('id') ;
 //     fetch(url).then(response => alert('test'));
 // }
+
+function getStart(path){
+    url = "http://127.0.0.1:5000/start?path=" + path
+    fetch(url).then(response => alert('test'));
+}

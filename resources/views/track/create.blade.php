@@ -9,7 +9,7 @@
         <div class="card p-0" style="max-width: 70%">
             <div class="card-header">{{ __('New track') }}</div>
             <div class="card-body">
-                <form method="post" action="{{route('tracks.store')}}" onsubmit="gpxToJson()" enctype="multipart/form-data">
+                <form method="post" action="{{route('tracks.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
@@ -65,8 +65,7 @@
 
                     @if(Illuminate\Support\Facades\Session::has('success'))
                         <div class="alert alert-success mt-2" role="alert">
-                            Track successfully uploaded! View it <a href="#" class="alert-link">here</a>.
-{{--                            TODO create track show to view detail of created and other tracks--}}
+                            Track successfully uploaded! View it <a href="{{route('tracks.show', ['track'=> \Illuminate\Support\Facades\Session::get('track')])}}" class="alert-link">here</a>.
                         </div>
                     @endif
                 </form>

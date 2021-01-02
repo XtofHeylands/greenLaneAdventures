@@ -7,7 +7,6 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
-use phpGPX\phpGPX;
 
 class TrackController extends Controller
 {
@@ -84,24 +83,14 @@ class TrackController extends Controller
         $title = $request->title;
         $description = $request->description;
 
-        //store starting point in database for quick access
-        $gpx = new phpGPX();
-        $file = $gpx->load(asset($gpx_path));
-
-        $lat = $file->tracks[0]->segments[0]->points[0]->latitude;
-        $lon = $file->tracks[0]->segments[0]->points[0]->longitude;
-
-        //TODO takes to long so find other solution
-
-        $track->lat = $lat;
-        $track->lon = $lon;
-
         $track->title = $title;
         $track->description = $description;
 
         $track->save();
 
-        return redirect::to("/tracks/create")->with('success', 'Track successfully added');
+        return redirect::to("/tracks/create")->with('success', 'Track successfully added')
+                                                    ->with('track', $track)
+                                                    ->with('gpx', $track->gpx);
     }
 
     /**
@@ -112,7 +101,8 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        return view('track.show');
+        $track = Track::all()->find($id);
+        return view('track.show')->with('track', $track);
     }
 
     /**
