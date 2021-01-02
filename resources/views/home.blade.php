@@ -78,7 +78,7 @@
 
 @if($tracks->isNotEmpty())
     <script type="text/javascript">
-
+        initMapOverview();
     </script>
 @endif
 

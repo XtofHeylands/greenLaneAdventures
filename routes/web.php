@@ -24,10 +24,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 Route::get('/search/tracks', [TrackController::class, 'search'])->name('search');
-
 Route::resource('tracks', TrackController::class);
 //GET 	        /tracks 	            index 	    tracks.index
 //GET 	        /tracks/create 	        create 	    tracks.create

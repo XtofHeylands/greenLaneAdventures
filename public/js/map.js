@@ -1,7 +1,7 @@
 // initialization of the map on the home screen to center on the user's current location and
 // display markers at the start location of each track
 
-function initMapOverview(tracks){
+function initMapOverview(){
     navigator.geolocation.getCurrentPosition(function(location) {
         var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
 
@@ -35,9 +35,9 @@ function initMapOverview(tracks){
         var marker = L.marker(latlng, {icon:normalIcon}).addTo(mymap);
 
         //marker at the beginning of each track
-        tracks.forEach(function (track){
-            var beginPoint = L.marker([track[0].Latitude, track[0].Longitude], {icon: beginIcon}).addTo(mymap);
-        })
+        // tracks.forEach(function (track){
+        //     var beginPoint = L.marker([track[0].Latitude, track[0].Longitude], {icon: beginIcon}).addTo(mymap);
+        // })
 
         marker.bindPopup("<b>Your current location.</b>").openPopup();
     });

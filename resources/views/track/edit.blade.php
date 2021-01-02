@@ -48,8 +48,6 @@
                         </div>
                     </div>
 
-                    {{--                    TODO make difficulty selectable--}}
-
                     <div class="form-group">
                         <label for="gpx">Choose gpx file <small class="text-muted">(Leave empty to keep unchanged)</small></label>
                         <input type="file" name="gpx" class="form-control" id="gpx">
