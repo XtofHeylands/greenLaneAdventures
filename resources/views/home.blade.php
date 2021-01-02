@@ -76,6 +76,10 @@
     </div>
 </div>
 
-<script>initMapOverview();</script>
+@if($tracks->isNotEmpty())
+    <script type="text/javascript">
+
+    </script>
+@endif
 
 @endsection

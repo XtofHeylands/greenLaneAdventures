@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container pt-0 mt-5">
+    <div class="container pt-0 mt-5 mb-5">
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
                 <div class="btn-group btn-group">
@@ -26,13 +26,13 @@
 
 @if($tracks->isNotEmpty())
     @foreach ($tracks as $track)
-        <div class="container mt-5">
+        <div class="container mt-2">
             <div class="row justify-content-center">
                 <div class="card mb-3 p-0" style="max-width: 100%;">
-                    <div class="row no-gutters">
+                    <div class="row">
                         <div class="col-4">
                             <form method="get" action="{{route('tracks.show', ['track'=> $track])}}" enctype="multipart/form-data">
-                                <input type="image" class="card-img no-gutters" src="/storage/images{{str_replace('public/images', '', $track->image)}}" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
+                                <input type="image" class="card-img" src="/storage/images{{str_replace('public/images', '', $track->image)}}" alt="Image missing" style="max-height: 300px; max-width: 350px; object-fit: cover"/>
                             </form>
                         </div>
                         <div class="col-8">

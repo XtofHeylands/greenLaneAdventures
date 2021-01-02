@@ -57,7 +57,6 @@
                     @if(Illuminate\Support\Facades\Session::has('success'))
                         <div class="alert alert-success mt-3" role="alert">
                             Track successfully updated! View it <a href="#" class="alert-link">here</a>.
-                            {{--                            TODO create track show to view detail of created and other tracks--}}
                         </div>
                     @endif
                     @if($tracks->isNotEmpty())
@@ -68,7 +67,9 @@
                                         <div class="card-body p-0">
                                             <div class="row no-gutters">
                                                 <div class="col">
-                                                    <img src="/storage/images{{str_replace('public/images', '', $track->image)}}" class="card-img no-gutters" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover">
+                                                    <form method="get" action="{{route('tracks.show', ['track'=> $track])}}" enctype="multipart/form-data">
+                                                        <input type="image" class="card-img no-gutters" src="/storage/images{{str_replace('public/images', '', $track->image)}}" alt="Image missing" style="max-height: 300px; max-width: 350px; object-fit: cover"/>
+                                                    </form>
                                                 </div>
                                                 <div class="col">
                                                     <div class="card-body">
