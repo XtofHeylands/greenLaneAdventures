@@ -18,17 +18,17 @@ function initMapOverview(){
 
         // custom marker icons
         var normalIcon = L.icon({
-            iconUrl: './images/PointIcon.png',
+            iconUrl: 'http://127.0.0.1:8000/storage/assets/PointIcon.png',
             iconSize: [20, 29],
             iconAnchor: [10, 28],
             popupAnchor: [0, -35]
         })
 
         var beginIcon = L.icon({
-            iconUrl: './images/startPointIcon.png',
+            iconUrl: 'http://127.0.0.1:8000/storage/assets/startPointIcon.png',
             iconSize: [20, 29],
             iconAnchor: [10, 28],
-            popupAnchor: [10, -20]
+            popupAnchor: [0, -35]
         })
 
         //marker at the user's current location
@@ -47,43 +47,69 @@ function initMapOverview(){
 
 
 //drawing of selected track onto the map
-function drawTrack(track, map){
+function drawTrack(track){
+
+    var track = Object.values(track);
+    var latlng = new L.LatLng(track[0].Latitude, track[0].Longitude);
+
+    //center map at the middle of the track
+    var mymap = L.map('map').setView(latlng, 13);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoieHRvZmgiLCJhIjoiY2tqYTV6b2ZjMWUxNDM0bXRqazJwY2pvMSJ9.ZfY4I769QSutybzGRT6lCQ'
+    }).addTo(mymap);
 
     // custom marker icons
     var beginIcon = L.icon({
-        iconUrl: './images/startPointIcon.png',
+        iconUrl: 'http://127.0.0.1:8000/storage/assets/startPointIcon.png',
         iconSize: [20, 29],
         iconAnchor: [10, 28],
-        popupAnchor: [10, -20]
+        popupAnchor: [0, -35]
     })
 
     var endIcon = L.icon({
-        iconUrl: './images/endPointIcon.png',
+        iconUrl: 'http://127.0.0.1:8000/storage/assets/endPointIcon.png',
         iconSize: [20, 29],
         iconAnchor: [10, 28],
-        popupAnchor: [10, -20]
+        popupAnchor: [0, -35]
     })
 
     // first add begin and endpoint to the map
-    var beginPoint = L.marker([track[0].latitude, track[0].longitude], {icon: beginIcon}).addTo(map);
-    var endPoint = L.marker([track[track.length - 1].latitude, track[track.length - 1].longitude], {icon: endIcon}).addTo(map);
+    var beginPoint = L.marker([track[0].Latitude, track[0].Longitude], {icon: beginIcon}).addTo(mymap);
+    var endPoint = L.marker([track[track.length - 1].Latitude, track[track.length - 1].Longitude], {icon: endIcon}).addTo(mymap);
 
     beginPoint.bindPopup("<b>Start</b>");
     endPoint.bindPopup("<b>End</b>");
 
     // second add the polyline between begin and endpoint
-    var points = [track.latitude, track.longitude];
-    var polyline = L.polyline(points, {color:'red'}).addTo(map);
+    var points = [];
+    var i = 0;
+
+    track.forEach(function (element){
+        points.push([element.Latitude, element.Longitude]);
+    });
+
+    var polyline = L.polyline(points, {color:'red'}).addTo(mymap);
 
     // zoom map to fit the polyline and markers
-    map.fitBounds(polyline.getBounds());
+    mymap.fitBounds(polyline.getBounds());
 }
 
-// // call to python REST service
-// function gpxToJson(){
-//     url = "http://127.0.0.1:5000/convert?path=" + document.getElementById('id') ;
-//     fetch(url).then(response => alert('test'));
-// }
+// call to python REST service
+function gpxToJson(path){
+    url = "http://127.0.0.1:5000/convert?path=C:/xampp/htdocs/greenlaneAdventures/public/storage/gpx" + path;
+    fetch(url).then(response => {
+        console.log(response);
+        return response.json()})
+                .then(json => JSON.parse(json))
+                .then(obj => {return obj})
+                .then(fnc => {drawTrack(fnc)});
+}
 
 function getStart(path){
     url = "http://127.0.0.1:5000/start?path=" + path

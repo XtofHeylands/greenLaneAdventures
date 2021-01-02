@@ -31,11 +31,13 @@
                 <div class="card mb-3 p-0" style="max-width: 100%;">
                     <div class="row no-gutters">
                         <div class="col-4">
-                            <img src="/storage/images{{str_replace('public/images', '', $track->image)}}" class="card-img no-gutters" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover">
+                            <form method="get" action="{{route('tracks.show', ['track'=> $track])}}" enctype="multipart/form-data">
+                                <input type="image" class="card-img no-gutters" src="/storage/images{{str_replace('public/images', '', $track->image)}}" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
+                            </form>
                         </div>
                         <div class="col-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{$track->title}}</h5>
+                                <h5 class="card-title stretched-link" href>{{$track->title}}</h5>
                                 @if($track->difficulty == 'easy')
                                     Difficulty:
                                     <span class="badge badge-pill badge-success">easy</span>
