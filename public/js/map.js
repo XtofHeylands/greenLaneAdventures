@@ -1,7 +1,7 @@
 // initialization of the map on the home screen to center on the user's current location and
 // display markers at the start location of each track
 
-function initMapOverview(){
+function initMapOverview(starts){
     navigator.geolocation.getCurrentPosition(function(location) {
         var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
 
@@ -35,10 +35,11 @@ function initMapOverview(){
         var marker = L.marker(latlng, {icon:normalIcon}).addTo(mymap);
 
         //marker at the beginning of each track
-        // tracks.forEach(function (track){
-        //     var beginPoint = L.marker([track[0].Latitude, track[0].Longitude], {icon: beginIcon}).addTo(mymap);
-        // })
-
+        var starts = Object.values(starts);
+        starts.forEach(function (element){
+            var latlng = new L.LatLng(element.Latitude, element.Longitude);
+            var beginPoint = L.marker(latlng, {icon:beginIcon}).addTo(mymap);
+        });
         marker.bindPopup("<b>Your current location.</b>").openPopup();
     });
 }
@@ -86,7 +87,6 @@ function drawTrack(track){
 
     // second add the polyline between begin and endpoint
     var points = [];
-    var i = 0;
 
     track.forEach(function (element){
         points.push([element.Latitude, element.Longitude]);
@@ -110,11 +110,11 @@ function gpxToJson(path){
 }
 
 function getStarts(){
-
-    url = "http://127.0.0.1:5000/start?path=C:/xampp/htdocs/greenlaneAdventures/public/storage/gpx" + path;
+    url = "http://127.0.0.1:5000/start?path=C:/xampp/htdocs/greenlaneAdventures/public/storage/gpx";
     fetch(url).then(response => {
         console.log(response);
         return response.json()})
         .then(json => JSON.parse(json))
-        .then(obj => {return obj});
+        .then(obj => {return obj})
+        .then(fnc => {initMapOverview(fnc)});
 }
