@@ -2,10 +2,13 @@
 // display markers at the start location of each track
 
 function initMapOverview(starts){
+
+    var mymap = L.map('map');
+
     navigator.geolocation.getCurrentPosition(function(location) {
         var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
 
-        var mymap = L.map('map').setView(latlng, 13);
+        mymap.setView(latlng, 13);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -24,24 +27,26 @@ function initMapOverview(starts){
             popupAnchor: [0, -35]
         })
 
-        var beginIcon = L.icon({
-            iconUrl: 'http://127.0.0.1:8000/storage/assets/startPointIcon.png',
-            iconSize: [20, 29],
-            iconAnchor: [10, 28],
-            popupAnchor: [0, -35]
-        })
-
         //marker at the user's current location
         var marker = L.marker(latlng, {icon:normalIcon}).addTo(mymap);
 
-        //marker at the beginning of each track
-        var starts = Object.values(starts);
-        starts.forEach(function (element){
-            var latlng = new L.LatLng(element.Latitude, element.Longitude);
-            var beginPoint = L.marker(latlng, {icon:beginIcon}).addTo(mymap);
-        });
         marker.bindPopup("<b>Your current location.</b>").openPopup();
     });
+
+    var beginIcon = L.icon({
+        iconUrl: 'http://127.0.0.1:8000/storage/assets/startPointIcon.png',
+        iconSize: [20, 29],
+        iconAnchor: [10, 28],
+        popupAnchor: [0, -35]
+    })
+
+    //marker at the beginning of each track
+    var starts = Object.values(starts);
+    starts.forEach(function (element){
+        var latlng = new L.LatLng(element.Latitude, element.Longitude);
+        var beginPoint = L.marker(latlng, {icon:beginIcon}).addTo(mymap);
+    });
+
 }
 
 
