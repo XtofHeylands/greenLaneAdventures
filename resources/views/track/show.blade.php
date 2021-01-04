@@ -39,8 +39,7 @@
                 @if($track->user_id == Auth()->id())
                 <div class="col-2 text-right pr-5" style="font-size: 5px;line-height: 115px;letter-spacing: 0.162em;font-weight: 100;font-style: normal;">
                     <form action="{{URL('/tracks', ['track' => $track])}}" method="post">
-
-                        <a href="tracks/{{$track->id}}/edit" class="btn btn-secondary" role="button">Edit</a>
+                        <a href="{{route('tracks.edit', ['track'=> $track->id])}}" class="btn btn-secondary" role="button">Edit</a>
                         <input class="btn btn-danger" type="submit" value="Delete">
 
                         @method('delete')

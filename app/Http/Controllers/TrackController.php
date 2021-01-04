@@ -223,4 +223,8 @@ class TrackController extends Controller
         //...
         return view('track.index')->with('tracks', $tracks);
     }
+
+    public function select(Request $request){
+        return Track::all()->where('id', '=', $request->id);
+    }
 }

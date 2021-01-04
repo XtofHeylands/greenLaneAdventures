@@ -45,10 +45,50 @@ function initMapOverview(starts){
     starts.forEach(function (element){
         var latlng = new L.LatLng(element.Latitude, element.Longitude);
         var beginPoint = L.marker(latlng, {icon:beginIcon}).addTo(mymap);
+
+        beginPoint.elmId = element.id; // store the id on the marker
+        beginPoint.on('click', onClick);
     });
 
 }
 
+//function called when clicking on marker @home
+function onClick(e) {
+    var id = e.target.elmId;
+
+    var request = {
+      id: id
+    };
+
+    var url = "api/tracks/select"
+
+    fetch(url,
+        {
+            method: 'post',
+            headers: {'Content-type':'application/json'},
+            body: JSON.stringify(request)
+        }
+    )
+        .then(response => response.json())
+        .then(json => insertTrackDetails(json));
+}
+
+// set the data corresponding to the selected track
+// to the details field in the home view
+function insertTrackDetails(data){
+
+    var data = Object.values(data);
+    var image = data[0].image;
+    image = image.replace('public/images', '/storage/images');
+
+    document.getElementById('pills-detail').innerText = '/Title:'+ data[0].title
+                                                                 +'/Difficulty:'+ data[0].difficulty
+                                                                 +'/Description:'+ data[0].description
+                                                                 +'/Created at:'+ data[0].created_at ;
+    document.getElementById('pills-image').src = image;
+
+    //TODO document.getElementById('pills-comments').innerText = data.description;
+}
 
 //drawing of selected track onto the map
 function drawTrack(track){
