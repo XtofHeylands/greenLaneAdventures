@@ -7,6 +7,9 @@
 
 @section('content')
 <div class="container pt-5">
+    <div class="row text-center pb-5">
+        <a style="font-size: 20px;"> {{$message}} </a>
+    </div>
     <div class="row justify-content-center">
         <div class="col-sm">
             <div class="card">
