@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="" />
+    <list default="true" id="b73012aa-672f-49cd-b81f-ed65ef5bb49e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +230,7 @@
       <workItem from="1609666317577" duration="5974000" />
       <workItem from="1609748254119" duration="11313000" />
       <workItem from="1610109761502" duration="12281000" />
-      <workItem from="1610210950807" duration="6779000" />
+      <workItem from="1610210950807" duration="7569000" />
     </task>
     <servers />
   </component>
