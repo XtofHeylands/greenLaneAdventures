@@ -52,7 +52,10 @@
                 <div class="card-body" >
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-details" role="tabpanel" aria-labelledby="pills-details-tab">
-                            <p id="pills-detail">please select a track on the map</p>
+                            <h5 id="pills-detail-title">please select a track on the map</h5>
+                            <p id="pills-detail-difficulty"></p>
+                            <p id="pills-detail-description"></p>
+                            <p id="pills-detail-created"></p>
 {{--                            TODO format details--}}
                         </div>
                         <div class="tab-pane fade" id="pills-pictures" role="tabpanel" aria-labelledby="pills-pictures-tab">
@@ -71,7 +74,7 @@
         <div class="col-sm">
             <div class="card">
                 <div class="card-header">{{ __('Upcoming events') }}</div>
-
+                    <p class="text-center"> Work in progress </p>
                 <div class="card-body">
 
                 </div>

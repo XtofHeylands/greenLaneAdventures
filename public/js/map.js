@@ -81,10 +81,11 @@ function insertTrackDetails(data){
     var image = data[0].image;
     image = image.replace('public/images', '/storage/images');
 
-    document.getElementById('pills-detail').innerText = '/Title:'+ data[0].title
-                                                                 +'/Difficulty:'+ data[0].difficulty
-                                                                 +'/Description:'+ data[0].description
-                                                                 +'/Created at:'+ data[0].created_at ;
+    document.getElementById('pills-detail-title').innerText = 'Title: '+ data[0].title;
+    document.getElementById('pills-detail-difficulty').innerText = 'Difficulty: '+ data[0].difficulty;
+    document.getElementById('pills-detail-description').innerText = 'Description: '+ data[0].description;
+    document.getElementById('pills-detail-created').innerText = 'Created at: '+ data[0].created_at ;
+
     document.getElementById('pills-image').src = image;
 
     //TODO document.getElementById('pills-comments').innerText = data.description;

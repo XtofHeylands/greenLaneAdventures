@@ -23,6 +23,7 @@
                 <div class="col-6">
                     <div class="card-body">
                         <h5 class="card-title">{{$track->title}}</h5>
+                        <p class="card-text pr-5">{{$track->description}}</p>
                         @if($track->difficulty == 'easy')
                             Difficulty:
                             <span class="badge badge-pill badge-success">easy</span>

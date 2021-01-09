@@ -128,16 +128,19 @@
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase">greenlaneAdventures</h5>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                            voluptatem veniam, est atque cumque eum delectus sint!
+                            This website was created to gather people with the same passion for four-wheel driving.
+                            GreenlaneAdventures is a solution to share greenlane tracks with other drivers, a place
+                            to keep up to date with the latest events in the 4x4 scene and a social network to
+                            connect with other enthusiast.
                         </p>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h5 class="text-uppercase">more info</h5>
-                        <p>insert</p>
-                        <p>insert</p>
+                        <p>
+                            This website is a work in progress. I'm an engineering student and I like to work
+                            on this project im my free time. Studying still takes priority. ;)
+                        </p>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">

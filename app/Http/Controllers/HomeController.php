@@ -39,7 +39,7 @@ class HomeController extends Controller
 
         });
 
-        $response = $sw->call("WelcomeMessageProvider.WelcomeMessage", [new WelcomeMessage('test')] );
+        $response = $sw->call("WelcomeMessageProvider.WelcomeMessage", [new WelcomeMessage(Auth::user()->name)] );
         $message = $response->WelcomeMessageResult;
 
         $tracks = Track::all();
