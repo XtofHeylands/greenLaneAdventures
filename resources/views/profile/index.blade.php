@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <img src="public/images/{{$user->profileImage}}"   class="card-img" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
+                            <img src="public/images/{{$user->profileImage}}" class="card-img" alt="Image missing" style="max-height: 350px; max-width: 350px; object-fit: cover"/>
                         </div>
                         <div class="col">
                             <p>{{$user->bio}}</p>
